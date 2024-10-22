@@ -14,13 +14,13 @@ public class Main {
             try{
                 numberBaseBallController = NumberBaseballApp.start();
                 numberBaseBallController.setResultNo(resultNo += 1);
-                System.out.println("시도횟수: " + numberBaseBallController.getResultTry());
-                System.out.println(resultNo);
+                //System.out.println("시도횟수: " + numberBaseBallController.getResultTry());
+                //System.out.println(resultNo);
                 if(numberBaseBallController.getControllStatus().equals("2")){
                     System.out.println("게임기록보기");
                     for (NumberBaseBallController baseBallController : resultList) {
-                        System.out.print(baseBallController.getResultTry() + "번째 게임 :");
-                        System.out.println(" 시도 횟수 - " + baseBallController.getResultNo());
+                        System.out.print(baseBallController.getResultNo() + "번째 게임 :");
+                        System.out.println(" 시도 횟수 - " + baseBallController.getResultTry());
                     }
                 }
                 resultList.add(numberBaseBallController);

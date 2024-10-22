@@ -1,27 +1,22 @@
-import javax.naming.StringRefAddr;
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class NumberBaseballChecker {
-    private boolean not;
+    public static boolean checkNumberValue(String checkNumber, int Level_Diff) throws Exception{
+        try{
+            List<String> toStringList = List.of(checkNumber.split(""));
+            int[] val = toStringList.stream().mapToInt(Integer::parseInt).toArray();
+            List<Integer> toParseIntegerList = Arrays.stream(val).boxed().toList();
 
-
-    public boolean checkNumberValue(List<Integer> vasd){
-        boolean asd;
-        Set<Integer> set = new HashSet<Integer>(vasd);
-        if(set.size() == vasd.size()){
-            asd = true;
-        }else{
-            asd = false;
+            Set<Integer> checkSet = new HashSet<Integer>(toParseIntegerList);
+            return checkSet.size() == toParseIntegerList.size() && checkSet.size() == Level_Diff;
         }
-        return asd;
+        catch (Exception e){
+            return false;
+        }
     }
-
-
-
-
-
-
+    public static List<Integer> parseNumberList(String checkNumber) throws Exception{
+            List<String> toStringList = List.of(checkNumber.split(""));
+            int[] val = toStringList.stream().mapToInt(Integer::parseInt).toArray();
+            return Arrays.stream(val).boxed().toList();
+    }
 }

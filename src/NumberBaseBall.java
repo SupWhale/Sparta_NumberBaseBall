@@ -12,7 +12,8 @@ public class NumberBaseBall {
     }
 
     public void getAnswer(){
-        answer.stream().forEach(System.out::println);
+        answer.stream().forEach(System.out::print);
+        System.out.println();
     }
 
     public void setAnswer(int setNumber){
