@@ -1,15 +1,17 @@
+package NumberBaseball;
+
 public class NumberBaseBallController {
-    private String controllStatus;
+    private String controlStatus;
     private int resultTry;
     private int resultNo;
 
 
-    public String getControllStatus() {
-        return controllStatus;
+    public String getControlStatus() {
+        return controlStatus;
     }
 
-    public void setControllStatus(String controllStatus) {
-        this.controllStatus = controllStatus;
+    public void setControlStatus(String controlStatus) {
+        this.controlStatus = controlStatus;
     }
 
     public int getResultTry() {

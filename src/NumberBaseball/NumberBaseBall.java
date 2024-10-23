@@ -1,3 +1,5 @@
+package NumberBaseball;
+
 import java.util.*;
 
 public class NumberBaseBall {
@@ -7,15 +9,17 @@ public class NumberBaseBall {
     private int out = 0;
     private List<Integer> answer;
     private int tryNo;
-    NumberBaseBall(){
+    public NumberBaseBall(){
 
     }
-
+    
+    //디버깅용 프린트문
     public void getAnswer(){
-        answer.stream().forEach(System.out::print);
+        answer.forEach(System.out::print);
         System.out.println();
     }
-
+    
+    //게임을 시작할때 정답을 설정한다.
     public void setAnswer(int setNumber){
         Set<Integer> new_answer = new HashSet<Integer>();
         while(new_answer.size() < setNumber){
@@ -24,7 +28,8 @@ public class NumberBaseBall {
         }
         this.answer = new_answer.stream().toList();
     }
-
+    
+    //숫자야구 시작
     public List<Integer> playBaseball(List<Integer> swing){
         this.strike = 0;
         this.ball = 0;
