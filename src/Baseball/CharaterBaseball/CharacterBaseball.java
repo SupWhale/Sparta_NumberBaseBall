@@ -2,14 +2,14 @@ package Baseball.CharaterBaseball;
 
 import java.util.*;
 
-public class CharaterBaseball {
+public class CharacterBaseball {
 
     private int ball = 0;
     private int strike = 0;
     private int out = 0;
     private List<Character> answer;
     private int tryNo;
-    public CharaterBaseball(){
+    public CharacterBaseball(){
 
     }
     

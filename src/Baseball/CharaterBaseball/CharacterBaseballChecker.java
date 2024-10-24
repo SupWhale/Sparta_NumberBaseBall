@@ -6,21 +6,21 @@ import java.util.*;
 
 public class CharacterBaseballChecker {
 
-    public static boolean checkCharacterValue(String checkNumber, int Level_Diff) throws Exception{
+    public static boolean checkCharacterValue(String checkNumber, int levelDiff) throws Exception{
         try{
             List<Character> toParseCharacterList = parseCharacterList(checkNumber);
             Set<Character> checkSet = new HashSet<Character>(toParseCharacterList);
-            return checkSet.size() == toParseCharacterList.size() && checkSet.size() == Level_Diff;
+            return checkSet.size() == toParseCharacterList.size() && checkSet.size() == levelDiff;
         }
         catch (BadInputException e){
             return false;
         }
     }
     public static List<Character> parseCharacterList(String checkCharacter) throws Exception{
-            List<Character>charResult = new ArrayList<Character>();
+            List<Character>charResultList = new ArrayList<Character>();
             for (int i=0; i<checkCharacter.length(); i++) {
-                charResult.add(checkCharacter.charAt(i));
+                charResultList.add(checkCharacter.charAt(i));
             }
-            return charResult;
+            return charResultList;
     }
 }

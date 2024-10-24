@@ -10,13 +10,13 @@ public class Main {
         BaseballStatus baseballStatus = new BaseballStatus();
         List<BaseballStatus> resultList = new ArrayList<>();
         int resultNo = 0;
-        baseballStatus.setControlStatus("start");
+        baseballStatus.setStatus("start");
 
-        while(!baseballStatus.getControlStatus().equals("3")){
+        while(!baseballStatus.getStatus().equals("3")){
             try{
                 baseballStatus = BaseballApp.start();
                 //몇번째 게임인지 기록하기
-                if(baseballStatus.getControlStatus().equals("3")){
+                if(baseballStatus.getStatus().equals("3")){
                     System.out.println("게임기록보기");
                     for (BaseballStatus baseBallController : resultList) {
                         System.out.print(baseBallController.getResultNo() + "번째 게임 :");

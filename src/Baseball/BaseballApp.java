@@ -1,7 +1,7 @@
 package Baseball;
 
 import Baseball.BaseballStatus.BaseballStatus;
-import Baseball.CharaterBaseball.CharaterBaseball;
+import Baseball.CharaterBaseball.CharacterBaseball;
 import Baseball.CharaterBaseball.CharacterBaseballChecker;
 import Baseball.NumberBaseball.NumberBaseball;
 import Baseball.NumberBaseball.NumberBaseballChecker;
@@ -12,7 +12,7 @@ public class BaseballApp {
     public static BaseballStatus start() throws Exception{
         BaseballStatus baseBallStatus = new BaseballStatus();
         NumberBaseball numberBaseBall = new NumberBaseball();
-        CharaterBaseball charaterBaseball = new CharaterBaseball();
+        CharacterBaseball characterBaseball = new CharacterBaseball();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("환영합니다! 원하시는 번호를 입력해주세요");
@@ -29,7 +29,7 @@ public class BaseballApp {
                 if(checkLevelDiff < 6 && checkLevelDiff > 2) levelDiff = checkLevelDiff;
                 else System.out.println("제대로된 숫자를 입력하세요");
 
-                baseBallStatus.setControlStatus("0");
+                baseBallStatus.setStatus("0");
                 return baseBallStatus;
             }
             case "1" -> {
@@ -64,12 +64,12 @@ public class BaseballApp {
                         System.out.println("숫자 제대로 입력해주세요");
                     }
                 }
-                baseBallStatus.setControlStatus("1");
+                baseBallStatus.setStatus("1");
                 return baseBallStatus;
             }
             case "2" -> {
-                charaterBaseball.setAnswer(levelDiff);
-                charaterBaseball.getAnswer();
+                characterBaseball.setAnswer(levelDiff);
+                characterBaseball.getAnswer();
                 //result의 구조는 아래과 같다
                 //0 : 스트라이크 개수, 1: 볼 개수, 2: 아웃 여부, 3: 시도 횟수
                 //result 초기화
@@ -81,7 +81,7 @@ public class BaseballApp {
                     String tryAnswer = scanner.nextLine();
 
                     if(CharacterBaseballChecker.checkCharacterValue(tryAnswer, levelDiff)) {
-                        result = charaterBaseball.playBaseball(CharacterBaseballChecker.parseCharacterList(tryAnswer));
+                        result = characterBaseball.playBaseball(CharacterBaseballChecker.parseCharacterList(tryAnswer));
                         baseBallStatus.setResultTry(result.getLast());
 
                         //스트라이크, 볼 , 아웃이 값이 있을때만 표기하도록한다.
@@ -99,15 +99,15 @@ public class BaseballApp {
                         System.out.println("문자를 제대로 입력해주세요");
                     }
                 }
-                baseBallStatus.setControlStatus("1");
+                baseBallStatus.setStatus("1");
                 return baseBallStatus;
             }
             case "3" -> {
-                baseBallStatus.setControlStatus("2");
+                baseBallStatus.setStatus("2");
                 return baseBallStatus;
             }
             case "4" -> {
-                baseBallStatus.setControlStatus("3");
+                baseBallStatus.setStatus("3");
                 return baseBallStatus;
             }
             default -> {
