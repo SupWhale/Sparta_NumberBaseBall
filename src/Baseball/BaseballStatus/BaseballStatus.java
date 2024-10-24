@@ -1,17 +1,18 @@
 package Baseball.BaseballStatus;
 
 public class BaseballStatus {
-    private String Status;
+    private String status;
+    private String gameType;
     private int resultTry;
     private int resultNo;
 
 
     public String getStatus() {
-        return Status;
+        return status;
     }
 
-    public void setStatus(String Status) {
-        this.Status = Status;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public int getResultTry() {
@@ -28,5 +29,13 @@ public class BaseballStatus {
 
     public void setResultNo(int resultNo) {
         this.resultNo = resultNo;
+    }
+
+    public String getGameType() {
+        return gameType;
+    }
+
+    public void setGameType(String gameType) {
+        this.gameType = gameType;
     }
 }
