@@ -17,7 +17,8 @@ public class BaseballApp {
 
         System.out.println("환영합니다! 원하시는 번호를 입력해주세요");
         System.out.println("0. 자리수 설정 1. 숫자야구 게임 시작하기 2. 문자야구 게임 시작하기  3. 게임 기록 보기  4. 종료하기");
-
+        
+        //메뉴를 고를 변수
         String modeInput = scanner.nextLine();
 
         int levelDiff = 3; //기본값으로 3
@@ -43,6 +44,7 @@ public class BaseballApp {
                 List<Integer> result = new ArrayList<>();
                 result.addFirst(0);
 
+                //스트라이크가 설정한 난이도수에 도달할때 까지 계속 반복한다.
                 while(result.getFirst() != levelDiff){
                     System.out.println("숫자를 입력하세요");
                     String tryAnswer = scanner.nextLine();
@@ -81,6 +83,7 @@ public class BaseballApp {
                 List<Integer> result = new ArrayList<>();
                 result.addFirst(0);
 
+                //스트라이크가 설정한 난이도수에 도달할때 까지 계속 반복한다.
                 while(result.getFirst() != levelDiff){
                     System.out.println("문자를 입력하세요");
                     String tryAnswer = scanner.nextLine();
