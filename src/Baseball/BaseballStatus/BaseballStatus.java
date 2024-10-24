@@ -14,11 +14,11 @@ public class BaseballStatus {
         this.Status = Status;
     }
 
-    public int getTryResult() {
+    public int getResultTry() {
         return resultTry;
     }
 
-    public void setTryResult(int resultTry) {
+    public void setResultTry(int resultTry) {
         this.resultTry = resultTry;
     }
 
