@@ -16,7 +16,7 @@ public class Main {
             try{
                 numberBaseBallController = NumberBaseballApp.start();
                 //몇번째 게임인지 기록하기
-                if(numberBaseBallController.getControlStatus().equals("2")){
+                if(numberBaseBallController.getControlStatus().equals("3")){
                     System.out.println("게임기록보기");
                     for (NumberBaseballController baseBallController : resultList) {
                         System.out.print(baseBallController.getResultNo() + "번째 게임 :");
