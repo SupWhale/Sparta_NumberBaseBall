@@ -3,9 +3,9 @@ package NumberBaseball;
 import java.util.*;
 
 public class NumberBaseballApp {
-    public static NumberBaseBallController start() throws Exception{
-        NumberBaseBallController numberBaseBallController = new NumberBaseBallController();
-        NumberBaseBall numberBaseBall = new NumberBaseBall();
+    public static NumberBaseballController start() throws Exception{
+        NumberBaseballController numberBaseBallController = new NumberBaseballController();
+        NumberBaseball numberBaseBall = new NumberBaseball();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("환영합니다! 원하시는 번호를 입력해주세요");

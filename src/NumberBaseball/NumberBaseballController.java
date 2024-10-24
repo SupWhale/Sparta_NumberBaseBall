@@ -1,6 +1,6 @@
 package NumberBaseball;
 
-public class NumberBaseBallController {
+public class NumberBaseballController {
     private String controlStatus;
     private int resultTry;
     private int resultNo;
