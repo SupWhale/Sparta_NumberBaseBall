@@ -1,30 +1,30 @@
-import NumberBaseball.NumberBaseball;
-import NumberBaseball.NumberBaseballController;
-import NumberBaseball.NumberBaseballApp;
+import Baseball.BaseballApp;
+import Baseball.NumberBaseball.NumberBaseball;
+import Baseball.BaseballStatus.BaseballStatus;
 
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        NumberBaseball numberBaseBall = new NumberBaseball();
-        NumberBaseballController numberBaseBallController = new NumberBaseballController();
-        List<NumberBaseballController> resultList = new ArrayList<>();
+        NumberBaseball numberBaseball = new NumberBaseball();
+        BaseballStatus baseballStatus = new BaseballStatus();
+        List<BaseballStatus> resultList = new ArrayList<>();
         int resultNo = 0;
-        numberBaseBallController.setControlStatus("start");
+        baseballStatus.setControlStatus("start");
 
-        while(!numberBaseBallController.getControlStatus().equals("3")){
+        while(!baseballStatus.getControlStatus().equals("3")){
             try{
-                numberBaseBallController = NumberBaseballApp.start();
+                baseballStatus = BaseballApp.start();
                 //몇번째 게임인지 기록하기
-                if(numberBaseBallController.getControlStatus().equals("3")){
+                if(baseballStatus.getControlStatus().equals("3")){
                     System.out.println("게임기록보기");
-                    for (NumberBaseballController baseBallController : resultList) {
+                    for (BaseballStatus baseBallController : resultList) {
                         System.out.print(baseBallController.getResultNo() + "번째 게임 :");
                         System.out.println(" 시도 횟수 - " + baseBallController.getResultTry());
                     }
                 }else{
-                    numberBaseBallController.setResultNo(resultNo += 1);
-                    resultList.add(numberBaseBallController);
+                    baseballStatus.setResultNo(resultNo += 1);
+                    resultList.add(baseballStatus);
                 }
             }catch (Exception e){
                 System.out.println(e.getMessage());

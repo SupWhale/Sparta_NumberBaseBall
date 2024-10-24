@@ -1,15 +1,15 @@
-package NumberBaseball;
+package Baseball.CharaterBaseball;
 
 import java.util.*;
 
-public class NumberBaseball {
+public class CharaterBaseball {
 
     private int ball = 0;
     private int strike = 0;
     private int out = 0;
-    private List<Integer> answer;
+    private List<Character> answer;
     private int tryNo;
-    public NumberBaseball(){
+    public CharaterBaseball(){
 
     }
     
@@ -21,16 +21,17 @@ public class NumberBaseball {
     
     //게임을 시작할때 정답을 설정한다.
     public void setAnswer(int setNumber){
-        Set<Integer> new_answer = new HashSet<Integer>();
+        Set<Character> new_answer = new HashSet<Character>();
         while(new_answer.size() < setNumber){
             Random ran = new Random();
-            new_answer.add(ran.nextInt(1,9));
+            char a = (char) ran.nextInt(65,90);
+            new_answer.add(a);
         }
         this.answer = new_answer.stream().toList();
     }
     
-    //숫자야구 시작
-    public List<Integer> playBaseball(List<Integer> swing){
+    //문자야구 시작
+    public List<Integer> playBaseball(List<Character> swing){
         this.strike = 0;
         this.ball = 0;
         this.out = 0;

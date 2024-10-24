@@ -1,12 +1,16 @@
-package NumberBaseball;
+package Baseball;
 
-import CharaterBaseball.CharaterBaseball;
-import CharaterBaseball.CharacterBaseballChecker;
+import Baseball.BaseballStatus.BaseballStatus;
+import Baseball.CharaterBaseball.CharaterBaseball;
+import Baseball.CharaterBaseball.CharacterBaseballChecker;
+import Baseball.NumberBaseball.NumberBaseball;
+import Baseball.NumberBaseball.NumberBaseballChecker;
+
 import java.util.*;
 
-public class NumberBaseballApp {
-    public static NumberBaseballController start() throws Exception{
-        NumberBaseballController numberBaseBallController = new NumberBaseballController();
+public class BaseballApp {
+    public static BaseballStatus start() throws Exception{
+        BaseballStatus baseBallStatus = new BaseballStatus();
         NumberBaseball numberBaseBall = new NumberBaseball();
         CharaterBaseball charaterBaseball = new CharaterBaseball();
         Scanner scanner = new Scanner(System.in);
@@ -25,8 +29,8 @@ public class NumberBaseballApp {
                 if(checkLevelDiff < 6 && checkLevelDiff > 2) levelDiff = checkLevelDiff;
                 else System.out.println("제대로된 숫자를 입력하세요");
 
-                numberBaseBallController.setControlStatus("0");
-                return numberBaseBallController;
+                baseBallStatus.setControlStatus("0");
+                return baseBallStatus;
             }
             case "1" -> {
                 numberBaseBall.setAnswer(levelDiff);
@@ -43,7 +47,7 @@ public class NumberBaseballApp {
 
                     if(NumberBaseballChecker.checkNumberValue(tryAnswer, levelDiff)) {
                         result = numberBaseBall.playBaseball(NumberBaseballChecker.parseNumberList(tryAnswer));
-                        numberBaseBallController.setResultTry(result.getLast());
+                        baseBallStatus.setResultTry(result.getLast());
 
                         //스트라이크, 볼 , 아웃이 값이 있을때만 표기하도록한다.
                         if(result.getFirst() != 0) {
@@ -60,8 +64,8 @@ public class NumberBaseballApp {
                         System.out.println("숫자 제대로 입력해주세요");
                     }
                 }
-                numberBaseBallController.setControlStatus("1");
-                return numberBaseBallController;
+                baseBallStatus.setControlStatus("1");
+                return baseBallStatus;
             }
             case "2" -> {
                 charaterBaseball.setAnswer(levelDiff);
@@ -78,7 +82,7 @@ public class NumberBaseballApp {
 
                     if(CharacterBaseballChecker.checkCharacterValue(tryAnswer, levelDiff)) {
                         result = charaterBaseball.playBaseball(CharacterBaseballChecker.parseCharacterList(tryAnswer));
-                        numberBaseBallController.setResultTry(result.getLast());
+                        baseBallStatus.setResultTry(result.getLast());
 
                         //스트라이크, 볼 , 아웃이 값이 있을때만 표기하도록한다.
                         if(result.getFirst() != 0) {
@@ -95,19 +99,19 @@ public class NumberBaseballApp {
                         System.out.println("문자를 제대로 입력해주세요");
                     }
                 }
-                numberBaseBallController.setControlStatus("1");
-                return numberBaseBallController;
+                baseBallStatus.setControlStatus("1");
+                return baseBallStatus;
             }
             case "3" -> {
-                numberBaseBallController.setControlStatus("2");
-                return numberBaseBallController;
+                baseBallStatus.setControlStatus("2");
+                return baseBallStatus;
             }
             case "4" -> {
-                numberBaseBallController.setControlStatus("3");
-                return numberBaseBallController;
+                baseBallStatus.setControlStatus("3");
+                return baseBallStatus;
             }
             default -> {
-                return numberBaseBallController;
+                return baseBallStatus;
             }
         }
     }
