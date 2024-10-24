@@ -1,4 +1,4 @@
-package Baseball.BaseballStatus;
+package baseball.baseballStatus;
 
 public class BaseballStatus {
     private String status;

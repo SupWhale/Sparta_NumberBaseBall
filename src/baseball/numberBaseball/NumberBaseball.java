@@ -9,16 +9,9 @@ public class NumberBaseball {
     private int out = 0;
     private List<Integer> answer;
     private int tryNo;
-    public NumberBaseball(){
 
-    }
-    
-    //디버깅용 프린트문
-    public void getAnswer(){
-        answer.forEach(System.out::print);
-        System.out.println();
-    }
-    
+    public NumberBaseball(){}
+
     //게임을 시작할때 정답을 설정한다.
     public void setAnswer(int setNumber){
         Set<Integer> new_answer = new HashSet<Integer>();

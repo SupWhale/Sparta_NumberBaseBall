@@ -1,4 +1,4 @@
-package Baseball.CharaterBaseball;
+package baseball.charaterBaseball;
 
 import java.util.*;
 
@@ -9,16 +9,9 @@ public class CharacterBaseball {
     private int out = 0;
     private List<Character> answer;
     private int tryNo;
-    public CharacterBaseball(){
 
-    }
-    
-    //디버깅용 프린트문
-    public void getAnswer(){
-        answer.forEach(System.out::print);
-        System.out.println();
-    }
-    
+    public CharacterBaseball(){}
+
     //게임을 시작할때 정답을 설정한다.
     public void setAnswer(int setNumber){
         Set<Character> new_answer = new HashSet<Character>();

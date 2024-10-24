@@ -1,4 +1,4 @@
-package Baseball.Exception;
+package baseball.exception;
 
 public class BadInputException extends Exception{
         public BadInputException(String type) {

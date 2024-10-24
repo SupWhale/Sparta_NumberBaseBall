@@ -1,6 +1,6 @@
-package Baseball.CharaterBaseball;
+package baseball.charaterBaseball;
 
-import Baseball.Exception.BadInputException;
+import baseball.exception.BadInputException;
 
 import java.util.*;
 

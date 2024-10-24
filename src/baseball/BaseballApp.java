@@ -1,10 +1,10 @@
-package Baseball;
+package baseball;
 
-import Baseball.BaseballStatus.BaseballStatus;
-import Baseball.CharaterBaseball.CharacterBaseball;
-import Baseball.CharaterBaseball.CharacterBaseballChecker;
-import Baseball.NumberBaseball.NumberBaseball;
-import Baseball.NumberBaseball.NumberBaseballChecker;
+import baseball.baseballStatus.BaseballStatus;
+import baseball.charaterBaseball.CharacterBaseball;
+import baseball.charaterBaseball.CharacterBaseballChecker;
+import baseball.numberBaseball.NumberBaseball;
+import baseball.numberBaseball.NumberBaseballChecker;
 
 import java.util.*;
 
@@ -21,7 +21,7 @@ public class BaseballApp {
         //메뉴를 고를 변수
         String modeInput = scanner.nextLine();
 
-        int levelDiff = 3; //기본값으로 3
+        int levelDiff = 3; //난이도 값, 기본값으로 3이 주어진다.
 
         switch(modeInput){
             //난이도 설정
@@ -37,7 +37,6 @@ public class BaseballApp {
             //숫자 야구 
             case "1" -> {
                 numberBaseBall.setAnswer(levelDiff);
-                numberBaseBall.getAnswer();
                 //result의 구조는 아래과 같다
                 //0 : 스트라이크 개수, 1: 볼 개수, 2: 아웃 여부, 3: 시도 횟수
                 //result 초기화
@@ -76,7 +75,6 @@ public class BaseballApp {
             // 문자 야구
             case "2" -> {
                 characterBaseball.setAnswer(levelDiff);
-                characterBaseball.getAnswer();
                 //result의 구조는 아래과 같다
                 //0 : 스트라이크 개수, 1: 볼 개수, 2: 아웃 여부, 3: 시도 횟수
                 //result 초기화

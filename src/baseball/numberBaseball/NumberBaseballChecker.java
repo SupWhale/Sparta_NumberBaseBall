@@ -1,7 +1,7 @@
-package Baseball.NumberBaseball;
+package baseball.numberBaseball;
 
 import java.util.*;
-import Baseball.Exception.BadInputException;
+import baseball.exception.BadInputException;
 
 public class NumberBaseballChecker {
 

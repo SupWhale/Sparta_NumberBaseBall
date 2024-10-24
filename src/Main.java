@@ -1,12 +1,13 @@
 import Baseball.BaseballApp;
 import Baseball.NumberBaseball.NumberBaseball;
 import Baseball.BaseballStatus.BaseballStatus;
+import baseball.BaseballApp;
+import baseball.baseballStatus.BaseballStatus;
 
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        NumberBaseball numberBaseball = new NumberBaseball();
         BaseballStatus baseballStatus = new BaseballStatus();
         List<BaseballStatus> resultList = new ArrayList<>();
         int resultNo = 0;
