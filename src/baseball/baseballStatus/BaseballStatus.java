@@ -3,6 +3,7 @@ package baseball.baseballStatus;
 public class BaseballStatus {
     private String status;
     private String gameType;
+    private int inputLevel;
     private int resultTry;
     private int resultNo;
 
@@ -37,5 +38,13 @@ public class BaseballStatus {
 
     public void setGameType(String gameType) {
         this.gameType = gameType;
+    }
+
+    public int getInputLevel() {
+        return inputLevel;
+    }
+
+    public void setInputLevel(int inputLevel) {
+        this.inputLevel = inputLevel;
     }
 }

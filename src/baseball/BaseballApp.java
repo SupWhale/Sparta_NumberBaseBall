@@ -9,7 +9,21 @@ import baseball.numberBaseball.NumberBaseballChecker;
 import java.util.*;
 
 public class BaseballApp {
-    public static BaseballStatus start() throws Exception{
+
+    public static void resultPrint(List<Integer> result, int levelDiff){
+        //스트라이크, 볼 , 아웃이 값이 있을때만 표기하도록한다.
+        if(result.getFirst() != 0) {
+            if(result.getFirst() == levelDiff){
+                System.out.println("정답입니다!");
+            }else{
+                System.out.println("스트라이크 : " + result.getFirst());
+            }
+        }
+        if(result.get(1) != 0) System.out.println("볼 : " + result.get(1));
+        if(result.get(2) != 0) System.out.println("아웃!");
+    }
+
+    public static BaseballStatus start(int inputLevel) throws Exception{
         BaseballStatus baseBallStatus = new BaseballStatus();
         NumberBaseball numberBaseBall = new NumberBaseball();
         CharacterBaseball characterBaseball = new CharacterBaseball();
@@ -21,17 +35,22 @@ public class BaseballApp {
         //메뉴를 고를 변수
         String modeInput = scanner.nextLine();
 
-        int levelDiff = 3; //난이도 값, 기본값으로 3이 주어진다.
+        int levelDiff = inputLevel; //난이도 값, 기본값으로 3이 주어진다.
 
         switch(modeInput){
             //난이도 설정
             case "0" -> {
+                System.out.println("설정할 자릿수를 입력해주세요");
                 int checkLevelDiff = scanner.nextInt();
                 //자릿수를 3~5만 입력할 수 있게 한다.
-                if(checkLevelDiff < 6 && checkLevelDiff > 2) levelDiff = checkLevelDiff;
+                if(checkLevelDiff < 6 && checkLevelDiff > 2){
+                    levelDiff = checkLevelDiff;
+                    System.out.println("난이도 변경이 완료되었습니다!");
+                }
                 else System.out.println("제대로된 숫자를 입력하세요");
 
                 baseBallStatus.setStatus("0");
+                baseBallStatus.setInputLevel(levelDiff);
                 return baseBallStatus;
             }
             //숫자 야구 
@@ -52,17 +71,8 @@ public class BaseballApp {
                         //올바른 값이라면 비교할 수 있도록 Integer 리스트로 파싱한다.
                         result = numberBaseBall.playBaseball(NumberBaseballChecker.parseNumberList(tryAnswer));
                         baseBallStatus.setResultTry(result.getLast());
-
-                        //스트라이크, 볼 , 아웃이 값이 있을때만 표기하도록한다.
-                        if(result.getFirst() != 0) {
-                            if(result.getFirst() == levelDiff){
-                                System.out.println("정답입니다!");
-                            }else{
-                                System.out.println("스트라이크 : " + result.getFirst());
-                            }
-                        }
-                        if(result.get(1) != 0) System.out.println("볼 : " + result.get(1));
-                        if(result.get(2) != 0) System.out.println("아웃!");
+                        //결과값을 출력한다.
+                        resultPrint(result, levelDiff);
                     }
                     else {
                         System.out.println("숫자 제대로 입력해주세요");
@@ -90,17 +100,8 @@ public class BaseballApp {
                         //올바른 값이라면 비교할 수 있도록 Character 리스트로 파싱한다.
                         result = characterBaseball.playBaseball(CharacterBaseballChecker.parseCharacterList(tryAnswer));
                         baseBallStatus.setResultTry(result.getLast());
-
-                        //스트라이크, 볼 , 아웃이 값이 있을때만 표기하도록한다.
-                        if(result.getFirst() != 0) {
-                            if(result.getFirst() == levelDiff){
-                                System.out.println("정답입니다!");
-                            }else{
-                                System.out.println("스트라이크 : " + result.getFirst());
-                            }
-                        }
-                        if(result.get(1) != 0) System.out.println("볼 : " + result.get(1));
-                        if(result.get(2) != 0) System.out.println("아웃!");
+                        //결과값을 출력한다.
+                        resultPrint(result, levelDiff);
                     }
                     else {
                         System.out.println("문자를 제대로 입력해주세요");

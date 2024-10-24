@@ -1,4 +1,4 @@
-package Baseball.NumberBaseball;
+package baseball.numberBaseball;
 
 import java.util.*;
 
