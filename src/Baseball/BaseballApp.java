@@ -99,15 +99,16 @@ public class BaseballApp {
                         System.out.println("문자를 제대로 입력해주세요");
                     }
                 }
-                baseBallStatus.setStatus("1");
+                baseBallStatus.setStatus("2");
+                baseBallStatus.setGameType("문자야구");
                 return baseBallStatus;
             }
             case "3" -> {
-                baseBallStatus.setStatus("2");
+                baseBallStatus.setStatus("3");
                 return baseBallStatus;
             }
             case "4" -> {
-                baseBallStatus.setStatus("3");
+                baseBallStatus.setStatus("4");
                 return baseBallStatus;
             }
             default -> {
